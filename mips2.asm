@@ -29,10 +29,24 @@
 # --------------------------------------------------------------------------------------------------------
 	a) ordenarArray:
 	# i = 0
+	move $t0, $zero	# indice do array
+	li $t9, 9999	# auxiliar pra fazer as comparações
 	# enquanto i < tamanho do vetor:
-	# pega o vetor [i]
+	beq $t0, $t1, saiOrdenacao	# for i=0; i<N, i++
+	# pega o elemento do vetor [i]
+	lw $a2, array($t0)
 	# se vetor [i] < x entao vetor[i] = valor
-	# i++
+	blt $a2, $t9, insereVetor
+	# senão, i++
+	add $t0, $t0, 1
+	
+	insereVetor
+	
+	int k = 9999;
+	for (i=0; i<N; i++) {
+	    for (j=0; j<N; j++) {
+	        if (vet[j] < k) {
+	            ordenado[j] = vet[j];
 	
 	b) somaPares:
 	# i = 0
