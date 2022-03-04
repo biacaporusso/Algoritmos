@@ -1,8 +1,9 @@
 .data
 	ent: .asciiz "Insira o valor de Vet["
 	ent2: .asciiz "]: "
+	.align 2
 	vet:
-		.align 2
+		#.align 2
 		.space 20
 		
 .text
@@ -19,6 +20,7 @@
 		move $t0, $a0	# salva o endereço base de vet
 		move $t1, $t0 	# endereço de vet[i]
 		li $t2, 0 	# i = 0		
+	
 	l:
 		la $a0, ent	# carrega o endereço da string
 		li $v0, 4	# codigo de impressao de string
